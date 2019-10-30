@@ -262,6 +262,7 @@ class School(models.Model):
     slug = models.SlugField(unique=True)
     seasons = models.ManyToManyField('Season',
             through='SchoolSeasonRegistration')
+    short = models.CharField(max_length=127)
 
     def save(self, *args, **kwargs):
         if not self.slug:
